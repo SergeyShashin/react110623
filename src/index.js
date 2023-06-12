@@ -1,5 +1,22 @@
-import { User } from './user';
+import React from 'react';
+import ReactDom from 'react-dom';
+// import { createRoot } from 'react-dom/client';
+// const container = document.getElementById('root');
+// const root = createRoot(container);
 
-let u = new User('Luke', 'Skywalker');
+let element = React.createElement(
+  'h1',
+  { className: 'react-hello' },
+  'Привет! Реакт работает!'
+);
 
-console.log(u.sayHi());
+// root.render(element);
+
+console.log(document.getElementById('root'));
+
+
+ReactDom.render(
+  element,
+  document.getElementById('root')
+);
+
