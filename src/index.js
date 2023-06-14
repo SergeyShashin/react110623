@@ -14,7 +14,6 @@ let element = React.createElement(
 
 console.log(document.getElementById('root'));
 
-
 ReactDom.render(
   element,
   document.getElementById('root')

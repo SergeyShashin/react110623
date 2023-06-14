@@ -13,13 +13,12 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
-      },
+      }
     ]
-
   },
   plugins: [
     new HtmlWebpackPlugin({
-      teamplate: path.resolve(__dirname, 'src', 'index.html'),
+      template: path.resolve(__dirname, 'src', 'index.html'),
       filename: 'index.html'
     })
 
