@@ -1,21 +1,17 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-// import { createRoot } from 'react-dom/client';
-// const container = document.getElementById('root');
-// const root = createRoot(container);
 
-let element = React.createElement(
-  'h1',
-  { className: 'react-hello' },
-  'Привет! Реакт работает!'
-);
+const messages = ['Привет!', 'Как дела?', 'Как погода?'];
 
-// root.render(element);
+const Message = (props) => <div>{props.text}</div>;
 
-console.log(document.getElementById('root'));
+const MessageList = (props) => {
+  return props.messages.map(message =>
+    <Message text={message} />
+  );
+}
 
 ReactDom.render(
-  element,
+  <MessageList messages={messages} />,
   document.getElementById('root')
 );
-
