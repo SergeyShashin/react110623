@@ -1,24 +1,26 @@
 import React, { Component } from 'react';
+import { Counter } from 'components/Counter';
 
 export class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      counter: 0
-    }
+
+  state = {
+    flag: false
+  }
+
+  handleClickToggle = () => {
+    this.setState((prevState) => ({
+      flag: !prevState.flag
+    }));
   }
 
   render() {
-    let { counter } = this.state;
+    let { flag } = this.state;
     return (
-
       <div>
-        <button>+</button>
-        <div>{counter}</div>
-        <button>-</button>
-      </div>
+        <button onClick={this.handleClickToggle}>Toggle</button>
+        {flag && <Counter/>}
+      </div >
     );
   }
-
 
 }
