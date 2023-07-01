@@ -21,9 +21,10 @@ export class Messenger extends Component {
     }, 5000)
   }
 
+
   componentDidUpdate() {
     setInterval(() => {
-      if (this.state.messages[this.state.messages.length-1].author !== 'Bot') {
+      if (this.state.messages[this.state.messages.length - 1].author !== 'Bot') {
         this.setState({ messages: this.state.messages.concat({ author: 'Bot', text: 'Бот приветствует Вас!' }) })
       }
 
@@ -35,14 +36,18 @@ export class Messenger extends Component {
     clearInterval(this.interval);
   }
 
+  getInputMessage = (message) => {
+    console.log(message);
+    this.setState({ messages: this.state.messages.concat({ author: message.author, text: message.text }) });
+  }
+
   render() {
     let { messages } = this.state;
     return (
       <div>
-        <ul>
-          {messages.map((message, idx) => <li key={idx}>{message.author}: {message.text}</li>)}
-        </ul>
-      </div >
+        <MessagesList messages={messages} />
+        <MessageForm getInputMessageFunction={this.getInputMessage} />
+      </div>
     );
   }
 
