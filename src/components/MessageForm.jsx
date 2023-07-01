@@ -18,7 +18,7 @@ export class MessageForm extends Component {
     let { author, text } = this.state;
     this.props.getInputMessageFunction({ author: author, text: text });
     this.setState({
-      text: ''
+      text: '' 
     });
   }
 
