@@ -1,6 +1,8 @@
+import './MessagesList.scss';
+
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Message, messageType } from './Message';
+import { Message, messageType } from 'components/Message';
 
 export class MessagesList extends Component {
 
@@ -11,9 +13,9 @@ export class MessagesList extends Component {
   render() {
     const { items } = this.props;
     return (
-      <ul>
+      <div className='messages-list'>
         {items.map((item, idx) => <Message key={idx} {...item} />)}
-      </ul>
+      </div>
     );
   }
 

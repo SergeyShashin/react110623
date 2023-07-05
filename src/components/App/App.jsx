@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Counter } from 'components/Counter';
 
 export class App extends Component {
 
@@ -18,7 +17,7 @@ export class App extends Component {
     return (
       <div>
         <button onClick={this.handleClickToggle}>Toggle</button>
-        {flag && <Counter/>}
+        {/* {flag && <Counter/>} */}
       </div >
     );
   }
