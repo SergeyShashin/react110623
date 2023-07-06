@@ -12,7 +12,7 @@ export class Message extends Component {
   static propTypes = messageType;
 
   get direction() {
-    return this.props.author === 'Bot' ? 'start' : 'end'
+    return this.props.author === 'Bot' ? 'start' : 'end';
   }
 
 
