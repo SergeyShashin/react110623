@@ -28,7 +28,7 @@ export class Message extends Component {
     return (
       <div className={classes}>
         <div>{text}</div>
-        <div className='sender'> {author}</div>
+        <div className='sender'> {author}</div> 
       </div >
     );
   }
