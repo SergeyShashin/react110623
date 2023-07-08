@@ -1,4 +1,8 @@
+import './MessageForm.scss'
+
 import React, { Component } from 'react';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 
 export class MessageForm extends Component {
 
@@ -18,17 +22,23 @@ export class MessageForm extends Component {
     let { author, text } = this.state;
     this.props.getInputMessageFunction({ author: author, text: text });
     this.setState({
-      text: '' 
+      text: ''
     });
+  }
+
+  handleHotKey = (event) => {
+    if (event.ctrlKey && event.keyCode === 13) {
+      this.handlerButtonSend();
+    }
   }
 
   render() {
     let { author, text } = this.state;
     return (
-      <div>
-        <input name="author" type="text" onChange={this.handlerInput} value={author} /><br/>
-        <textarea name="text" cols="30" rows="10" onChange={this.handlerInput} value={text}></textarea><br/>
-        <button onClick={this.handlerButtonSend}>Отправить</button>
+      <div className='message-form'>
+        <TextField name="author" type="text" onChange={this.handlerInput} value={author} variant='standard' label='Автор' className='author'/>
+        <TextField name="text" cols="30" rows="10" onChange={this.handlerInput} onKeyDown={this.handleHotKey} value={text} variant='standard' label='Сообщение' className='text' />
+        <Button onClick={this.handlerButtonSend} variant='contained' color='primary'>Отправить</Button>
       </div >
     );
   }

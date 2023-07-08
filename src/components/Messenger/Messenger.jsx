@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { MessageForm } from 'components/MessageForm';
-import { MessagesList } from 'components/MessagesList';
+import { Layout } from 'components/Layout';
 
 export class Messenger extends Component {
 
@@ -26,7 +26,7 @@ export class Messenger extends Component {
     let { messages } = this.state;
     return (
       <div>
-        <MessagesList items={messages} />
+        <Layout items={messages} />
         <MessageForm getInputMessageFunction={this.getInputMessage} />
       </div>
     );
