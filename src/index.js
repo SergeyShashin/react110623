@@ -2,9 +2,16 @@ import 'assets/global.css';
 
 import React from 'react';
 import ReactDom from 'react-dom';
-import {Messenger} from './components/Messenger';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import { Messenger } from './components/Messenger';
+import {routes} from './routes';
 
 ReactDom.render(
-  <Messenger />,
+  <BrowserRouter>
+    <Routes>
+      {routes.map((route, idx) => <Route key={idx} {...route} />)}
+    </Routes>
+  </BrowserRouter>,
   document.getElementById('root')
 );
