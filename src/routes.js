@@ -5,17 +5,17 @@ export const routes = [
   {
     path: '/',
     exact: true,
-    component: Messenger
+    element: Messenger
   },
   {
     path: '/about',
     exact: true,
-    component: AboutPage
+    element: AboutPage
   },
   {
     path: '/chats/:id',
     exact: true,
-    component: Messenger
+    element: Messenger
   }
 
 ]

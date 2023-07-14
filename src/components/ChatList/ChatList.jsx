@@ -2,6 +2,10 @@ import './ChatList.scss';
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import { Link } from 'react-router-dom';
 
 export class ChatList extends Component {
 
@@ -9,16 +13,23 @@ export class ChatList extends Component {
     return (
       <div className='chat-list'>
         <h4>Список чатов</h4>        
-        <ul>
-          <li>Чат1</li>
-          <li>Чат2</li>
-          <li>Чат3</li>
-          <li>Чат4</li>
-          <li>Чат5</li>
-          <li>Чат6</li>
-          <li>Чат7</li>
-          <li>Чат8</li>
-        </ul>
+        <List>
+          <ListItem>
+            <Link to='chats/1'>
+              <ListItemText primary="Chat1"></ListItemText>
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Link to='chats/2'>
+              <ListItemText primary="Chat2"></ListItemText>
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Link to='chats/3'>
+              <ListItemText primary="Chat3"></ListItemText>
+            </Link>
+          </ListItem>
+        </List>
       </div>
     );
   }
